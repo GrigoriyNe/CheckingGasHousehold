@@ -11,7 +11,7 @@ namespace Game
     {
         private const int Offset = 1;
 
-        [SerializeField] private List<BurnerFirerer> _burners;
+        [SerializeField] private List<Burner> _burners;
         [SerializeField] private GasAnalyzer.GasAnalyzer _analyzer;
 
         [SerializeField] private bool _needRandomizeOnNewLevel = true;
@@ -29,7 +29,7 @@ namespace Game
             _analyzer.Checked += OnAnalyzerCheck;
             _restartButton.onClick.AddListener(OnRestart);
 
-            foreach (BurnerFirerer item in _burners)
+            foreach (Burner item in _burners)
             {
                 item.Checked += CheckBurners;
             }
@@ -40,7 +40,7 @@ namespace Game
             _analyzer.Checked -= OnAnalyzerCheck;
             _restartButton.onClick.RemoveListener(OnRestart);
 
-            foreach (BurnerFirerer item in _burners)
+            foreach (Burner item in _burners)
             {
                 item.Checked -= CheckBurners;
             }
@@ -59,7 +59,7 @@ namespace Game
         {
             int countChecked = 0;
 
-            foreach (BurnerFirerer item in _burners)
+            foreach (Burner item in _burners)
             {
                 if (item.IsChecked)
                 {

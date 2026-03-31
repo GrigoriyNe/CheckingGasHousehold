@@ -5,16 +5,16 @@ namespace FireGroup
 {
     public class Matchstick : MonoBehaviour
     {
-        public Action<Matchstick> IsBurned;
+        public event Action<Matchstick> Burned;
 
         private void OnTriggerStay(Collider collider)
         {
-            if (collider.TryGetComponent(out BurnerFirerer burnerFirerer))
+            if (collider.TryGetComponent(out Burner burnerFirerer))
             {
                 if (burnerFirerer.IsFirePossible)
                 {
                     burnerFirerer.ChangeFire(true);
-                    IsBurned?.Invoke(this);
+                    Burned?.Invoke(this);
                 }
             }
         }

@@ -23,7 +23,7 @@ namespace FireGroup
             {
                 if (item != null)
                 {
-                    item.IsBurned -= OnBurn;
+                    item.Burned -= OnBurn;
                 }
             }
         }
@@ -34,14 +34,14 @@ namespace FireGroup
             matchstick.gameObject.SetActive(true);
             matchstick.transform.rotation = Quaternion.identity;
             matchstick.transform.position = _spawnPoint.position;
-            matchstick.IsBurned += OnBurn;
+            matchstick.Burned += OnBurn;
             _createdMatchsticks.Add(matchstick);
         }
 
         private void OnBurn(Matchstick matchstick)
         {
             _createdMatchsticks.Remove(matchstick);
-            matchstick.IsBurned -= OnBurn;
+            matchstick.Burned -= OnBurn;
             matchstick.gameObject.SetActive(false);
             _matchsticks.ReturnItem(matchstick);
         }
