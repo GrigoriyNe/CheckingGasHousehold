@@ -7,12 +7,15 @@ namespace FireGroup
     {
         public Action<Matchstick> IsBurned;
 
-        private void OnTriggerEnter(Collider collider)
+        private void OnTriggerStay(Collider collider)
         {
             if (collider.TryGetComponent(out BurnerFirerer burnerFirerer))
             {
-                burnerFirerer.ChangeFire(true);
-                IsBurned?.Invoke(this);
+                if (burnerFirerer.IsFirePossible)
+                {
+                    burnerFirerer.ChangeFire(true);
+                    IsBurned?.Invoke(this);
+                }
             }
         }
     }

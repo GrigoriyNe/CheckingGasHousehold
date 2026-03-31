@@ -21,7 +21,7 @@ namespace FireGroup
         {
             foreach (Matchstick item in _createdMatchsticks)
             {
-                if (item.isActiveAndEnabled)
+                if (item != null)
                 {
                     item.IsBurned -= OnBurn;
                 }

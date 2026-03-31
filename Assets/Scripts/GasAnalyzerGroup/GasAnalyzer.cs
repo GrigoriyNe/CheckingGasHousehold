@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace GasAnalyzer
@@ -6,15 +7,32 @@ namespace GasAnalyzer
     {
         [SerializeField] private GasAnalyzerAnimator _animator;
 
+        public event Action Checked;
+
+        private void Start()
+        {
+            _animator.ResultShowed += OnShowResult;
+        }
+
+        private void OnDestroy()
+        {
+            _animator.ResultShowed -= OnShowResult;
+        }
+
         private void OnTriggerEnter(Collider collider)
         {
             if (collider.TryGetComponent(out GasConnection gasConnection))
             {
-                ShowResults(gasConnection.IsGasLeak);
+                ShowingResults(gasConnection.IsGasLeak);
             }
         }
 
-        private void ShowResults(bool isGasLeak)
+        private void OnShowResult()
+        {
+            Checked?.Invoke();
+        }
+
+        private void ShowingResults(bool isGasLeak)
         {
             _animator.ShowAnimation(isGasLeak);
         }

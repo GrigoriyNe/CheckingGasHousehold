@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Switch
 {
-    public class RotaterInvoker : MonoBehaviour
+    public class RotatorInvoker : MonoBehaviour
     {
         [SerializeField] private float _minRotation;
         [SerializeField] private float _maxRotation;
@@ -11,7 +11,7 @@ namespace Switch
 
         public event Action<float> Rotated;
 
-        private void Start()
+        private void OnEnable()
         {
             SetMinValue();
         }

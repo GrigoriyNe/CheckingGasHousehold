@@ -4,14 +4,14 @@ namespace Switch
 {
     public partial class SwitchReader : MonoBehaviour
     {
-        [SerializeField] private RotaterInvoker _rotater;
+        [SerializeField] private RotatorInvoker _rotator;
 
         private bool _isTaked = false;
 
         private void Update()
         {
             if (_isTaked)
-                _rotater.SetRotation(transform.rotation.y);
+                _rotator.SetRotation(transform.rotation.y);
         }
 
         public void StartRotate()

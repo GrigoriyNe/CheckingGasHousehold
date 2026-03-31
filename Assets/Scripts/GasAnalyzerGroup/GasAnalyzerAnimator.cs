@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -19,6 +20,8 @@ namespace GasAnalyzer
         private bool _isShowing = false;
         private bool _isHaveLeak = false;
 
+        public Action ResultShowed;
+
         private void Start()
         {
             _delayShowingResult = new WaitForSeconds(_valueDelayShowingResult);
@@ -34,10 +37,10 @@ namespace GasAnalyzer
             _isHaveLeak = isHaveLeak;
 
             _animator.SetBool(IsProcessing, true);
-            StartCoroutine(DeactivatedProcessing());
+            StartCoroutine(DeactivateProcessing());
         }
 
-        private IEnumerator DeactivatedProcessing()
+        private IEnumerator DeactivateProcessing()
         {
             yield return _delayShowingProcessing;
             _animator.SetBool(IsProcessing, false);
@@ -49,20 +52,21 @@ namespace GasAnalyzer
             if (_isHaveLeak)
             {
                 _animator.SetBool(IsHaveLeak, true);
-                StartCoroutine(DeactivatedAnimation(IsHaveLeak));
+                StartCoroutine(DeactivateShowingResult(IsHaveLeak));
             }
             else
             {
                 _animator.SetBool(IsNotHaveLeak, true);
-                StartCoroutine(DeactivatedAnimation(IsNotHaveLeak));
+                StartCoroutine(DeactivateShowingResult(IsNotHaveLeak));
             }
         }
 
-        private IEnumerator DeactivatedAnimation(string nameAnimation)
+        private IEnumerator DeactivateShowingResult(string nameAnimation)
         {
             yield return _delayShowingResult;
             _animator.SetBool(nameAnimation, false);
             _isShowing = false;
+            ResultShowed?.Invoke();
         }
     }
 }

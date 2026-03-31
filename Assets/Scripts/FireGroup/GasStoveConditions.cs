@@ -7,7 +7,6 @@ namespace FireGroup
     {
         [SerializeField] private int _countDestroedBurner;
         [SerializeField] private List<FireEffectEditior> _fires;
-        [SerializeField] private bool _isGasLeak;
 
         private void Start()
         {
@@ -26,12 +25,13 @@ namespace FireGroup
                     {
                         fire.Brokend();
                     }
-                    else
-                    {
-                        i--;
-                    }
                 }
             }
+        }
+
+        public void Randomize()
+        {
+            _countDestroedBurner = Random.Range(0, _fires.Count);
         }
     }
 }

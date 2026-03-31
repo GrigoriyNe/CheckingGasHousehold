@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Switch;
 
@@ -7,10 +8,18 @@ namespace FireGroup
     {
         [SerializeField] private GameObject _fireEffect;
         [SerializeField] private GameObject _gasEffect;
-        [SerializeField] private RotaterInvoker _rotaterInvoker;
+        [SerializeField] private RotatorInvoker _rotaterInvoker;
+
+        public bool IsChecked { get; private set; }
+
+        public bool IsFirePossible =>
+            _rotaterInvoker.transform.rotation.y > 0;
+
+        public event Action Checked;
 
         private void OnEnable()
         {
+            IsChecked = false;
             _rotaterInvoker.Rotated += OnSwitchRotated;
         }
 
@@ -19,18 +28,24 @@ namespace FireGroup
             _rotaterInvoker.Rotated -= OnSwitchRotated;
         }
 
+        public void ChangeFire(bool isActiveFire)
+        {
+            if (isActiveFire)
+            {
+                Checked?.Invoke();
+                IsChecked = true;
+            }
+
+            _fireEffect.SetActive(isActiveFire);
+            _gasEffect.SetActive(!isActiveFire);
+        }
+
         private void OnSwitchRotated(float value)
         {
             if (value <= 0)
             {
                 ChangeFire(false);
             }
-        }
-
-        public void ChangeFire(bool isActiveFire)
-        {
-            _fireEffect.SetActive(isActiveFire);
-            _gasEffect.SetActive(!isActiveFire);
         }
     }
 }

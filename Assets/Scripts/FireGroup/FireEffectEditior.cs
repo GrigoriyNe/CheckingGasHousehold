@@ -7,7 +7,7 @@ namespace FireGroup
     {
         private const float BrokenLifetime = 0.2f;
 
-        [SerializeField] private RotaterInvoker _reader;
+        [SerializeField] private RotatorInvoker _switchInvoker;
 
         private bool _isBroken = false;
         private ParticleSystem.MainModule _mainModule;
@@ -16,11 +16,11 @@ namespace FireGroup
 
         private void OnEnable()
         {
-            _reader.Rotated += OnRotation;
+            _switchInvoker.Rotated += OnRotation;
 
             ParticleSystem particleSystem = GetComponent<ParticleSystem>();
             _mainModule = particleSystem.main;
-            _mainModule.startSize = _reader.transform.rotation.y;
+            _mainModule.startSize = _switchInvoker.transform.rotation.y;
 
             if (_isBroken)
             {
@@ -30,7 +30,7 @@ namespace FireGroup
 
         private void OnDisable()
         {
-            _reader.Rotated -= OnRotation;
+            _switchInvoker.Rotated -= OnRotation;
         }
 
         public void Brokend()
