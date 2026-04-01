@@ -6,7 +6,7 @@ namespace Switch
     {
         private const float MaxAngle = 90f;
 
-        [SerializeField] private GasRegulator _rotator;
+        [SerializeField] private GasRegulator _gasRegulator;
         [SerializeField] private float _minRotation;
         [SerializeField] private float _maxRotation;
 
@@ -20,7 +20,7 @@ namespace Switch
         private void Update()
         {
             if (_isTaked)
-                _rotator.SetRotation(transform.rotation.z);
+                _gasRegulator.SetRotation(transform.rotation.z);
         }
 
         public void StartRotate()

@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaafa1c412db0f4388fce5afb0394fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchInvoker: {fileID: 22055320}
+  _gasRegulator: {fileID: 22055320}
 --- !u!1 &22055316 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6958759401649200440, guid: 9053d6ce30c91ad4982c653be9efaad9, type: 3}
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaafa1c412db0f4388fce5afb0394fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchInvoker: {fileID: 1007039312}
+  _gasRegulator: {fileID: 1007039312}
 --- !u!1 &149029556
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402b2270f8583f242bf15b46864f8420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotator: {fileID: 1455544028}
+  _gasRegulator: {fileID: 1455544028}
   _minRotation: 0
   _maxRotation: 0.5
 --- !u!54 &149029561
@@ -1324,7 +1324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaafa1c412db0f4388fce5afb0394fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchInvoker: {fileID: 1507197445}
+  _gasRegulator: {fileID: 1507197445}
 --- !u!1 &197188374 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6075136683916653533, guid: 36e981f4cca684240bc1358e5685eb31, type: 3}
@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402b2270f8583f242bf15b46864f8420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotator: {fileID: 1976617172}
+  _gasRegulator: {fileID: 1976617172}
   _minRotation: 0
   _maxRotation: 0.5
 --- !u!20 &337666357 stripped
@@ -2121,7 +2121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fireEffect: {fileID: 1249220775}
   _gasEffect: {fileID: 476636734}
-  _rotaterInvoker: {fileID: 1507197445}
+  _gasRegulator: {fileID: 1507197445}
 --- !u!136 &560622676
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2432,7 +2432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaafa1c412db0f4388fce5afb0394fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchInvoker: {fileID: 1976617172}
+  _gasRegulator: {fileID: 1976617172}
 --- !u!1 &616818193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3283,7 +3283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaafa1c412db0f4388fce5afb0394fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchInvoker: {fileID: 1507197445}
+  _gasRegulator: {fileID: 1507197445}
 --- !u!1 &933281780 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9053d6ce30c91ad4982c653be9efaad9, type: 3}
@@ -3756,7 +3756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fireEffect: {fileID: 1202509477}
   _gasEffect: {fileID: 2086949974}
-  _rotaterInvoker: {fileID: 1007039312}
+  _gasRegulator: {fileID: 1007039312}
 --- !u!1 &1192201971
 GameObject:
   m_ObjectHideFlags: 0
@@ -4415,7 +4415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402b2270f8583f242bf15b46864f8420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotator: {fileID: 22055320}
+  _gasRegulator: {fileID: 22055320}
   _minRotation: 0
   _maxRotation: 0.5
 --- !u!54 &1259795247
@@ -4812,7 +4812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaafa1c412db0f4388fce5afb0394fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchInvoker: {fileID: 1976617172}
+  _gasRegulator: {fileID: 1976617172}
 --- !u!1 &1327380446
 GameObject:
   m_ObjectHideFlags: 0
@@ -5099,7 +5099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fireEffect: {fileID: 616818193}
   _gasEffect: {fileID: 988908253}
-  _rotaterInvoker: {fileID: 22055320}
+  _gasRegulator: {fileID: 22055320}
 --- !u!1001 &1401358208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5332,7 +5332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaafa1c412db0f4388fce5afb0394fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchInvoker: {fileID: 22055320}
+  _gasRegulator: {fileID: 22055320}
 --- !u!1 &1455544024 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8587219963979670331, guid: 9053d6ce30c91ad4982c653be9efaad9, type: 3}
@@ -6269,7 +6269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402b2270f8583f242bf15b46864f8420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotator: {fileID: 1507197445}
+  _gasRegulator: {fileID: 1507197445}
   _minRotation: 0
   _maxRotation: 0.5
 --- !u!54 &1773788163
@@ -6634,7 +6634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaafa1c412db0f4388fce5afb0394fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _switchInvoker: {fileID: 1007039312}
+  _gasRegulator: {fileID: 1007039312}
 --- !u!1 &1847944417
 GameObject:
   m_ObjectHideFlags: 0
@@ -6976,7 +6976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fireEffect: {fileID: 1529492661}
   _gasEffect: {fileID: 1270316113}
-  _rotaterInvoker: {fileID: 1976617172}
+  _gasRegulator: {fileID: 1976617172}
 --- !u!114 &1976617172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7475,7 +7475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402b2270f8583f242bf15b46864f8420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotator: {fileID: 1007039312}
+  _gasRegulator: {fileID: 1007039312}
   _minRotation: 0
   _maxRotation: 0.5
 --- !u!54 &2081856992

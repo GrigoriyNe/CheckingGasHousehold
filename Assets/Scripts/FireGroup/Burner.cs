@@ -8,24 +8,24 @@ namespace FireGroup
     {
         [SerializeField] private GameObject _fireEffect;
         [SerializeField] private GameObject _gasEffect;
-        [SerializeField] private GasRegulator _rotaterInvoker;
+        [SerializeField] private GasRegulator _gasRegulator;
 
         public bool IsChecked { get; private set; }
 
         public bool IsFirePossible =>
-            _rotaterInvoker.transform.rotation.z > 0;
+            _gasRegulator.transform.rotation.z > 0;
 
         public event Action Checked;
 
         private void OnEnable()
         {
             IsChecked = false;
-            _rotaterInvoker.Rotated += OnSwitchRotated;
+            _gasRegulator.Rotated += OnSwitchRotated;
         }
 
         private void OnDisable()
         {
-            _rotaterInvoker.Rotated -= OnSwitchRotated;
+            _gasRegulator.Rotated -= OnSwitchRotated;
         }
 
         public void ChangeFire(bool isActiveFire)
